@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+	<channel>
+		<title>役に立たない物理学</title>
+		<link>http://physics-butsuri.com/</link>
+		<description>高校物理から身の回りの現象まで豊富な具体例・図を用いてわかりやすく解説していきます。</description>
+		<language>ja</language>
+		<pubDate>Fri, 27 Mar 2020 11:54:39 +0900</pubDate>
+		<lastBuildDate>Fri, 27 Mar 2020 11:54:39 +0900</lastBuildDate>
+		<item>
+			<title>気体分子運動論</title>
+			<link>http://physics-butsuri.com/thermodynamics/kinetic_theory_of_gases.html</link>
+			<description><![CDATA[
+気体分子の運動と完全弾性衝突
+			]]></description>
+			<pubDate>Fri, 27 Mar 2020 11:20:29 +0900</pubDate>
+			<guid isPermaLink="true">http://physics-butsuri.com/thermodynamics/kinetic_theory_of_gases.html</guid>
+		</item>
+		<item>
+			<title>回折</title>
+			<link>http://physics-butsuri.com/wave/diffraction.html</link>
+			<description><![CDATA[
+単スリット回折　回折とは、波が物陰に回り込んで伝わる現象のことである。身近な例としては、音波は物陰によく回り込むのに対し、光は回り込まずに直進する性質がある。この違いはどこから生じるのだろうか。これはホイヘンス＝フレネルの原理を用いると説明することができる。　平面波を単スリットに垂直に入射し、十分遠方で合成波を観測する場合を考える(下図)。このとき、十分遠方における位置$ \ y \ $からの素元波は次のように表現できる。\[ A(y)=A\sin 2\pi (ft+\frac{y\sin \theta}{\lambda})\tag{1}\]よって、十分遠方で観測される合成波は素元波の足し合わせを考えて、\begin{eqnarray}B(\theta)&=&\int_0^a A(y) dy\\&=&-\frac{A\lambda}{2\pi\sin\theta}\left[ \cos2\pi(ft+\frac{y\sin\theta}{\lambda}) \right]_0^a\\&=&Aa\frac{\sin(\frac{\pi a}{\lambda}\sin\theta)}{\frac{\pi a}{\lambda}\sin\theta}\sin 2\pi (ft+\frac{a\sin \theta}{2\lambda})\tag{2}\\\end{eqnarray}となるので、単スリット回折の強度分布は\begin{eqnarray}I(\theta)&=&\frac{\overline{B(\theta)^2}}{\overline{B(0)^2}} \\&=& \frac{\sin^2(\frac{\pi a}{\lambda}\sin\theta)}{(\frac{\pi a}{\lambda}\sin\theta)^2}\tag{3}\\\end{eqnarray}となり、以下の図のようになる。上の図は、スリット幅$ \ 0.01mm \ $での可視光領域の強度分布である。赤色が$ \ 800nm \ $、青色が$ \ 400nm \ $である。赤色よりも青色は$ \ \sin\theta = 0 \ $付近に集中しており、波があまり回り込んでいないことがわかる。このように波長が長くなると$ \ \sin\theta=0 \ $付近以外にも大きな値を持つようになり、波がよく回り込むようになる。音が光よりも物陰に回り込むのはこのためである。回折格子　$ \ N \ $個の点波源が間隔$ \ d \ $で並んでいる場合を考える（下図）。一番下の点波源を基準にすると、十分遠方における下から$ \ i \ $番目の点波源からの波は位相が$ \ i\delta=i\frac{2\pi}{\lambda}d\sin\theta \ $だけ進んでいることになる。そのため、波をベクトルで表現すると以下の図のようになる。ここで$ \ A_O \ $は一番下の点波源からの波のベクトルであり、$ \ A_S \ $ は合成波のベクトルである。したがって、この強度分布は\begin{eqnarray}I(\theta)&=&\frac{A_S^2}{(NA_O)^2} \\&=& \frac{\sin^2(\frac{N\pi d}{\lambda}\sin\theta)}{N^2\sin^2(\frac{\pi d}{\lambda}\sin\theta)}\tag{4}\\\end{eqnarray}となり、以下の図のようになる。上の図において、赤色は赤色の可視光、青色は青色の可視光にそのまま対応している。このように波の波長によって強度分布がずれるためスペクトルが現れる。身近な例としては、CDの読み取り面が虹色に光って見えることである。これは面の凹凸が周期的に並んでいるため、そこで反射する光がつくる強度分布が、上図のような点波源が周期的に並んでできる強度分布と同じような分布になるからである。　次に点波源をスリット幅$ \ a \ $の単スリットにする（下図）。この場合、強度は点波源による回折格子と単スリット回折が重なるので、\[ I(\theta) = \frac{\sin^2(\frac{\pi a}{\lambda}\sin\theta)}{(\frac{\pi a}{\lambda}\sin\theta)^2}\frac{\sin^2(\frac{N\pi d}{\lambda}\sin\theta)}{N^2\sin^2(\frac{\pi d}{\lambda}\sin\theta)} \tag{5}\]となり、強度分布は以下のようになる($ \ \frac{d}{a}=4 \ $)。以上の図ををまとめると以下のようになる。
+			]]></description>
+			<pubDate>Mon, 23 Mar 2020 23:49:59 +0900</pubDate>
+			<guid isPermaLink="true">http://physics-butsuri.com/wave/diffraction.html</guid>
+		</item>
+		<item>
+			<title>波のエネルギー</title>
+			<link>http://physics-butsuri.com/wave/wave_energy.html</link>
+			<description><![CDATA[
+単振動と波のエネルギ-　力学的な波動のエネルギーを考える。単振動の章より、質量$ \ m \ $、角振動数$ \ \omega \ $、振幅$ \ A_m \ $で単振動をしている物体の力学的エネルギー$ \ E \ $は、\[E=\frac{1}{2}m\omega^2A_m^2\]と書ける。よって、単位長当たりの質量$ \ \rho \ $のばね上を伝わる正弦波の、単位長当たりのエネルギー$ \ \varepsilon \ $は、\begin{eqnarray}\varepsilon&=&\frac{1}{2}\rho\omega^2A_m^2 \\&=&2\pi^2\rho f^2A_m^2 \tag{1}\end{eqnarray}と書ける。波の強度　波の強度$ \ I \ $は、波の進行方向に単位時間あたりに流れるエネルギー量で定義されるので、波の速度$ \ v \ $とすると、\begin{eqnarray}I&=&\varepsilon v\\&=&2\pi^2\rho f^2A_m^2 v \tag{2}\end{eqnarray}と書ける。したがって$ \ I \propto A_m^2, f^2 \ $となり、力学的波動の強度は振幅の二乗と周波数の二乗に比例することがわかる。
+			]]></description>
+			<pubDate>Sun, 17 Nov 2019 13:51:31 +0900</pubDate>
+			<guid isPermaLink="true">http://physics-butsuri.com/wave/wave_energy.html</guid>
+		</item>
+		<item>
+			<title>弦を伝わる波</title>
+			<link>http://physics-butsuri.com/wave/velocity.html</link>
+			<description><![CDATA[
+弦を伝わる波　下図のように速度$ \ v \ $で弦を伝わる一次元の波を考える。この波を波と共に動く座標系で観測すると、弦は逆向きに速度$ \ v \ $で移動し、波形は止まって見える。波の山の付近の微小部分を円で近似すると、弦の微小部分の運動を速度$ \ v \ $の円運動で考えることができる。向心力は重力を無視すると、下図のように張力$ \ T \ $の合力となる。弦の線密度を$ \ \rho \ $とすると運動方程式は次のようになる。\[2T\sin\theta = \rho ds\frac{v^2}{R} \tag{1}\]$ \ \theta \ $が微小のとき、$ \ \sin\theta \sim \theta \ $であるから、(1)の左辺は以下のように変形できる。\begin{eqnarray}F&=&2T\sin\theta\\&\fallingdotseq&2T\theta\\&=&T\frac{ds}{R}\tag{2}\\\end{eqnarray}(1)、(2)より、\[v=\sqrt{\frac{T}{\rho}}\tag{3}\]を得る。
+			]]></description>
+			<pubDate>Sun, 17 Nov 2019 13:49:12 +0900</pubDate>
+			<guid isPermaLink="true">http://physics-butsuri.com/wave/velocity.html</guid>
+		</item>
+		<item>
+			<title>波動の表現</title>
+			<link>http://physics-butsuri.com/wave/sine_wave.html</link>
+			<description><![CDATA[
+重ね合わせの原理とホイヘンス＝フレネルの原理　波動とは、振動が空間を伝播する現象である。波動を考えていくうえで非常に重要になっていくのが、重ね合わせの原理とホイヘンス＝フレネルの原理である。重ね合わせの原理とは、同じ空間を複数の波が伝播する場合において、複数の波が重なった点での波(合成波)の形は、それぞれの波が独立に作る波形の足し合わせとなり、それ以外の場所では互いに影響を与えないという原理である。また、ホイヘンス＝フレネルの原理とは、波面の各点から新たに球面波（素元波）が発生しそれらの重ね合わせによって波が伝わっていくという原理である。　これらの原理を用いることで、波の重要な性質である回折や干渉を説明することができる。波動の表現　波というと多くの場合周期的に変動するものを指すことが多いが、一般には人の声のような不規則な波形のものもある。これらの波を表現するにはフーリエ級数と呼ばれるものを用いる。詳しい解説は省くが、簡単にいうとどんな複雑な波形であっても正弦波の重ね合わせで書けるということである。したがって、正弦波について理解しておけばどんな波もその足し合わせで理解することができる。そのため、以下では正弦波について議論する。　波源が単振動する場合を考える。角振動数$ \ \omega \ $、波の伝播速度$ \ c \ $、振幅$ \ A \ $、初期位相$ \ \phi \ $とすると、波源の位置での波の変位$ \ y_0(t) \ $は、\[y_0(t)=A\sin (\omega t + \phi)\]のように書ける。次に波源から距離$ \ x \ $離れた位置での変位$ \ y(x,t) \ $を考える。波源から波が伝播するのには$ \ \frac{x}{c} \ $かかる。よって、波源から距離$ \ x \ $離れた位置では、波源において時刻$ \ t'=t-\frac{x}{c} \ $における位相の波が到達することなる。したがって波の減衰を無視すれば、\[y_(x,t)=A\sin (\omega (t-\frac{x}{c}) + \phi)\tag{1}\]となる。$ \ \sin \ $の中身は位相と呼ばれ、$ \ \theta(x,t)　\ $とする。$ \ \theta(x,t)　\ $は他の振動の特徴量を用いて書き換えることもできる。例えば波の周期的な長さである波長$ \ \lambda \ $と単位時間当たりの振動回数である振動数(周波数)$ \ f \ $を用いると、波源との位相のずれは$ \ \frac{2\pi}{\lambda}x \ $と書けるので、\[\theta(x,t)=2\pi (ft-\frac{x}{\lambda}) + \phi \tag{2}\]と書ける。また、単位長あたりの位相の変化である波数$ \ k \ $を用いれば、\[\theta(x,t)=\omega t-kx + \phi \tag{3}\]とも書ける。
+			]]></description>
+			<pubDate>Sun, 17 Nov 2019 13:46:01 +0900</pubDate>
+			<guid isPermaLink="true">http://physics-butsuri.com/wave/sine_wave.html</guid>
+		</item>
+	</channel>
+</rss>

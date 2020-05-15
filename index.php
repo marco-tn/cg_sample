@@ -22,15 +22,28 @@
 <h2>プロジェクト一覧</h2>
 <div id="text1">
 
+<ul>
+<?php
 
+$path = "./projects";
+$array = scandir( $path );
+
+foreach ($array as &$value) {
+    if($value !== '.' && $value !== '..'){
+      echo '<li><span class="lbg" style="font-size: 16px"><a href="./projects/' . $value . '/">' . $value .'</a></span></li>';
+      echo "\n";
+    }
+}
+
+ ?>
+</ul>
 
 </div>
 </div>
-</div>
-
 </div>
 </div>
 <div id="rndbottom"></div>
+</div>
 
 <div id="footer">Copyright (C) 2020 <a href="./">CG SAMPLE</a> All Rights Reserved.</div>
 </body>
