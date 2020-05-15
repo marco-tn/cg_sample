@@ -17,7 +17,7 @@ var legacygl;
 var drawutil;
 var camera;
 var p0, p1, p2, p3;
-var selected = null; 
+var selected = null;
 var t0, t1, t2, t3;
 
 function spline(p0, p1, p2, p3, t, t0, t1, t2, t3) {
@@ -46,24 +46,24 @@ function draw() {
         t1 = t0 + Math.sqrt(Math.pow( p0[0]-p1[0], 2 ) + Math.pow( p0[1]-p1[1], 2 ));
         t2 = t1 + Math.sqrt(Math.pow( p1[0]-p2[0], 2 ) + Math.pow( p1[1]-p1[1], 2 ));
         t3 = t2 + Math.sqrt(Math.pow( p2[0]-p3[0], 2 ) + Math.pow( p2[1]-p3[1], 2 ));
-        break;  
+        break;
       case "cen":
         t1 = t0 + Math.sqrt(Math.sqrt(Math.pow( p0[0]-p1[0], 2 ) + Math.pow( p0[1]-p1[1], 2 )));
         t2 = t1 + Math.sqrt(Math.sqrt(Math.pow( p1[0]-p2[0], 2 ) + Math.pow( p1[1]-p1[1], 2 )));
         t3 = t2 + Math.sqrt(Math.sqrt(Math.pow( p2[0]-p3[0], 2 ) + Math.pow( p2[1]-p3[1], 2 )));
-        break;  
+        break;
     }
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
     // projection & camera position
     mat4.perspective(legacygl.uniforms.projection.value, Math.PI / 6, canvas.aspect_ratio(), 0.1, 1000);
     var modelview = legacygl.uniforms.modelview;
     camera.lookAt(modelview.value);
-    
+
     // xy grid
     gl.lineWidth(1);
     legacygl.color(0.5, 0.5, 0.5);
     drawutil.xygrid(100);
-    
+
     // draw line segments composing curve
     legacygl.color(1, 0.6, 0.2);
     legacygl.begin(gl.LINE_STRIP);
@@ -150,7 +150,7 @@ function init() {
         var viewport = [0, 0, canvas.width, canvas.height];
         var dist_min = 10000000;
         for (var i = 0; i < 4; ++i) {
-            var object_win = glu.project([points[i][0], points[i][1], 0], 
+            var object_win = glu.project([points[i][0], points[i][1], 0],
                                          legacygl.uniforms.modelview.value,
                                          legacygl.uniforms.projection.value,
                                          viewport);
@@ -171,7 +171,7 @@ function init() {
         if (selected != null) {
             var viewport = [0, 0, canvas.width, canvas.height];
             mouse_win.push(1);
-            var mouse_obj = glu.unproject(mouse_win, 
+            var mouse_obj = glu.unproject(mouse_win,
                                           legacygl.uniforms.modelview.value,
                                           legacygl.uniforms.projection.value,
                                           viewport);
@@ -197,13 +197,12 @@ function init() {
     // init OpenGL settings
     gl.viewport(0, 0, canvas.width, canvas.height);
     gl.clearColor(1, 1, 1, 1);
-  
+
 };
 </script>
 </head>
 <body onload="init(); draw();">
   <h2>Catmul-Romスプラインの描画</h2>
-  <h3 align="right">05-192621 西岡知輝</h3>
   <canvas id="canvas" width="640" height="480" style="border:1px solid #000000"></canvas>
   <table>
     <tr>
@@ -233,11 +232,11 @@ function init() {
     <li>Alt+Drag: Camera Pan</li>
     <li>Alt+Shift+drag: Camera Zoom</li>
   </ul>
-  
+
   <h4>
     内容説明・考察
   </h4>
-  
+
   <p>
     Catmul-Romスプラインの描画を行った。ノット列の決め方をselectできるようにし、ノット列の決め方に応じて曲線が変化する様子を観察した。
   </p>

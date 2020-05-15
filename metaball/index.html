@@ -24,24 +24,24 @@ var plane_origin;
 var plane_normal;
 var width = 10;
 var ep = 0.5;
-  
+
 function sdf(x, y, z){
   // 電位epとなる等電位面
   var q = 1;
-  var e = 0; 
+  var e = 0;
   for (var i = 0; i < objects.length; ++i) {
     var c = objects[i].position;
     e += objects[i].charge/Math.sqrt( Math.pow( x-c[0], 2 ) + Math.pow( y-c[1], 2 ) + Math.pow( z-c[2], 2 )  );
   }
   return e - ep;
 }
-  
+
 function marchingCubes(xMin, xMax, yMin, yMax, zMin, zMax, func,
                      c = 0, resolution = 128) {
   const xStep = (xMax - xMin) / resolution;
   const yStep = (yMax - yMin) / resolution;
   const zStep = (zMax - zMin) / resolution;
-  var mesh = { vertices: [], faces: [] };  
+  var mesh = { vertices: [], faces: [] };
   for (let x = xMin; x < xMax; x += xStep) {
     for (let y = yMin; y < yMax; y += yStep) {
       for (let z = zMin; z < zMax; z += zStep) {
@@ -71,7 +71,7 @@ function draw() {
     // zx-grid
     legacygl.color(0, 0, 0);
     drawutil.zxgrid(width);
-  
+
     // objects
     for (var i = 0; i < objects.length; ++i) {
         modelview.push();
@@ -86,7 +86,7 @@ function draw() {
         drawutil.sphere("line", 1,5,5);
         modelview.pop();
     }
-  
+
   // 等電位面描画
   if (document.getElementById("input_show_potential").checked){
     var mesh = marchingCubes(-width, width, -width, width, -width, width, sdf, 0, 64);
@@ -94,11 +94,11 @@ function draw() {
     legacygl.color(0, 0.7, 1);
     drawutil.trimesh("fill", mesh.vertices, mesh.faces);
     legacygl.color(0, 0, 0);
-    drawutil.trimesh("line", mesh.vertices, mesh.faces); 
+    drawutil.trimesh("line", mesh.vertices, mesh.faces);
   }
 
 };
-  
+
 function init() {
     // OpenGL context
     canvas = document.getElementById("canvas");
@@ -130,12 +130,12 @@ function init() {
     drawutil = get_drawutil(gl, legacygl);
     camera = get_camera(canvas.width);
     camera.eye = [20, 30, 30];
-  
+
     objects = [
         {position: [0, 0, 0], scale: 1, charge: 1},
         {position: [-9, 0, 0], scale: 1, charge: 1}
     ];
-  
+
     // event handlers
     canvas.onmousedown = function(evt) {
         var mouse_win = this.get_mousepos(evt);
@@ -148,7 +148,7 @@ function init() {
         var candidates = [];
         var viewport = [0, 0, canvas.width, canvas.height];
         for (var i = 0; i < objects.length; ++i) {
-            var object_win = glu.project(objects[i].position, 
+            var object_win = glu.project(objects[i].position,
                                          legacygl.uniforms.modelview.value,
                                          legacygl.uniforms.projection.value,
                                          viewport);
@@ -176,7 +176,7 @@ function init() {
         if (is_translating) {
             var viewport = [0, 0, canvas.width, canvas.height];
             mouse_win.push(1);
-            var mouse_obj = glu.unproject(mouse_win, 
+            var mouse_obj = glu.unproject(mouse_win,
                                           legacygl.uniforms.modelview.value,
                                           legacygl.uniforms.projection.value,
                                           viewport);
@@ -196,7 +196,7 @@ function init() {
         }
         is_translating = false;
     };
-  
+
     document.getElementById("input_charge").onchange = function(evt) {
         if (selected_index == -1)
             return;
@@ -221,7 +221,6 @@ function init() {
 </head>
 <body onload="init(); draw();">
     <h2>等電位面の描画</h2>
-    <h3 align="right">05-192621 西岡知輝</h3>
     <canvas id="canvas" width="640" height="480" style="border:1px solid #000000"></canvas>
     <div>Charge for Selected Object: <input type="number" id="input_charge" step="0.1" /></div>
     <div><button id="button_add">Add Object</button></div>
@@ -233,14 +232,14 @@ function init() {
         <li>Alt+Shift+drag: Camera Zoom</li>
         <li>Alt+Ctrl+drag: Camera Pan</li>
     </ul>
-  
+
   <h4>
     内容説明・考察
   </h4>
-  
+
   <p>
     MarchingCubesのアルゴリズムを用いて、等電位面の描画を行った。また、電荷変更や荷電粒子の追加を出来るようにした。
   </p>
-  
+
 </body>
 </html>
